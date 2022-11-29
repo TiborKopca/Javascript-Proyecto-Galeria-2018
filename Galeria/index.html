@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login de Galería - Curso JavaScript</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="hero is-fullheight">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title has-text-centered">Curso JavaScript - Galería</h1>
+                <div class="columns is-centered">
+                    <div class="column is-5">
+                        <div class="box">
+                            <h2 class="title has-text-grey has-text-centered">
+                                Acceso Galería
+                            </h2>
+                            <form id="formLogin">
+                                <div class="field">
+                                    <label class="label">Nombre de Usuario</label>
+                                    <div class="control has-icons-left has-icons-right">
+                                        <input class="input" type="text" placeholder="Nombre de usuario" id="txtLoginUsuario">
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-user-circle"></i>
+                                        </span>
+                                        <span class="icon is-small is-right">
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </span>
+                                    </div>
+                                    <p class="help is-danger is-hidden">Nombre de usuario no válido</p>
+                                    <p class="help is-success is-hidden">El nombre de usuario es válido</p>
+                                </div>
+                                <div class="field">
+                                    <label class="label">Contraseña</label>
+                                    <div class="control has-icons-left has-icons-right">
+                                        <input class="input" type="password" placeholder="Contraseña" id="txtLoginContrasenya">
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                        <span class="icon is-small is-right">
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </span>
+                                    </div>
+                                    <p class="help is-danger is-hidden">La contraseña no es válida</p>
+                                    <p class="help is-success is-hidden">La contraseña es válida</p>
+                                </div>
+                                <div class="field">
+                                    <div class="buttons is-centered is-marginless">
+                                        <button type="submit" disabled class="button is-medium is-primary is-uppercase">
+                                            Entrar
+                                        </button>
+                                    </div>
+                                    <p class="help is-danger is-hidden has-text-centered" id="msgErrorLogin">El usuario/contraseña no son
+                                        correctos</p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="column is-5">
+                        <div class="box">
+                            <h2 class="title has-text-grey has-text-centered">
+                                Registro Galería
+                            </h2>
+                            <form id="formRegistro">
+                                <div class="field">
+                                    <label class="label">Nombre de Usuario</label>
+                                    <div class="control has-icons-left has-icons-right">
+                                        <input class="input" type="text" placeholder="Nombre de usuario" id="txtUsuario">
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-user-circle"></i>
+                                        </span>
+                                        <span class="icon is-small is-right">
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </span>
+                                    </div>
+                                    <p class="help is-danger is-hidden">Nombre de usuario no válido</p>
+                                    <p class="help is-danger is-hidden status_409">El nombre de usurio ya está en uso</p>
+                                    <p class="help is-success is-hidden">El nombre de usuario es válido</p>
+                                </div>
+                                <div class="field">
+                                    <label class="label">Contraseña</label>
+                                    <div class="control has-icons-left has-icons-right">
+                                        <input class="input" type="password" placeholder="Contraseña" id="txtContrasenya">
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                        <span class="icon is-small is-right">
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </span>
+                                    </div>
+                                    <p class="help is-danger is-hidden">La contraseña no es válida</p>
+                                    <p class="help is-success is-hidden">La contraseña es válida</p>
+                                </div>
+                                <div class="field">
+                                    <label class="label">Confirmación Contraseña</label>
+                                    <div class="control has-icons-left has-icons-right">
+                                        <input class="input" type="password" placeholder="Repetir Contraseña" id="txtConfirmacion">
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                        <span class="icon is-small is-right">
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </span>
+                                    </div>
+                                    <p class="help is-danger is-hidden">La contraseña no coincide</p>
+                                    <p class="help is-success is-hidden">Las contraseñas coinciden</p>
+                                </div>
+                                <div class="field">
+                                    <label class="label">Nombre Completo</label>
+                                    <div class="control has-icons-left has-icons-right">
+                                        <input class="input" type="text" placeholder="Nombre y Apellidos" id="txtNombre">
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-user"></i>
+                                        </span>
+                                        <span class="icon is-small is-right">
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </span>
+                                    </div>
+                                    <p class="help is-danger is-hidden">El nombre no es válido</p>
+                                    <p class="help is-success is-hidden">El nombre es correcto</p>
+                                </div>
+                                <div class="field">
+                                    <div class="buttons is-centered is-marginless">
+                                        <button type="submit" disabled class="button is-medium is-primary is-uppercase">
+                                            Registro
+                                        </button>
+                                    </div>
+                                    <div id="mensajes-registro">
+                                        <p class="tag is-medium is-danger is-hidden has-text-centered is-fullwidth">Error
+                                            de registro, por
+                                            favor
+                                            revise los datos y vuelva a intentarlo</p>
+                                        <p class="tag is-medium is-success is-hidden has-text-centered is-fullwidth">Registro
+                                            completado con
+                                            éxito, ya puede acceder a la plataforma</p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script defer async src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script defer async src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer async src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/2.3.1/sha256.js"></script>
+    <script src="utils.js" async defer></script>
+    <script src="index.js" async defer></script>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: #F0FFFA;
+    width: 100%;
+    min-height: 100%;
+    padding-bottom: 5rem;
+}
+body.galeria {
+    background: #303F3A;
+    padding-top: 3rem;
+}
+
+.is-fullwidth {
+    width: 100% !important;
+}
+
+
+.loading {
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: block;
+    border-radius: 1rem;
+    background: rgba(255,255,255,0.8);
+    z-index: 888;
+}
+.loading .icon {
+  position: absolute;
+  left: calc(50% - 24px);
+  top: calc(50% - 24px);
+}
+
+#galeria .box {
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 0.3rem 2rem rgba(0,0,0,0.8);
+    opacity: 0.75;
+    transition: all 0.3s;
+    transition-delay: 0.5 !important;
+    width: 0%;
+    min-width: 100%;
+    margin-left: 0%;
+    position: relative;
+}
+
+#galeria .box:hover {
+    cursor: pointer;
+    box-shadow: 0 0 0.5rem rgba(255,255,255,1);
+    opacity: 1;
+    transform: rotate(2deg) scale(1.3);
+    z-index: 2;
+}
+
+#galeria .bottom-bar{
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+    padding: 0.4rem 1rem 0.3rem;
+    background: rgba(0,0,0,0.5);
+    border-top: solid 1px rgba(0,0,0,0.7);
+}
+
+#modalNuevaImagen figure.image {
+    min-height: 200px;
+    background: #ccc;
+}
+
+figure.image-frame{
+    border-radius: 1rem;
+    overflow: hidden;
+    border: solid 1px #666;
+    box-shadow: 0 0.3rem 1rem rgba(0,0,0,0.5);
+}
+
+#tagDescripcion{
+    box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 0.3rem rgba(0,0,0,0.8);
+}
+
+#btnLikeImage {
+    background: none transparent;
+    border: none;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    font-size: 1.2em;
+    width: 58px;
+    height: 58px;
+}
+
+#btnLikeImage svg {
+    filter: drop-shadow(0 0 0.3rem rgba(0,0,0, 0.3));
+}
+
+#btnLikeImage .icon {
+    position: absolute;
+    transition: opacity 0.5s;
+    left: 0; top: 0;
+}
+
+#btnLikeImage .is-liked{
+    opacity: 0;
+}
+
+#btnLikeImage.is-liked .is-liked{
+    opacity: 1;
+}
+
+#btnLikeImage:hover .is-liked{
+    opacity: 1;
+}
+
+.autorUsuario {
+    width: 4rem;
+    overflow: hidden;
+    text-align: center;
+    background-color: green;
+    color: white;
+    text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.9);
+    border-radius: 0.4rem;
+    padding: 0.5rem;
+    justify-content: center;
+    border: solid 2px rgba(0,0,0,0.5);
+    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Galería - Detalle Imagen - Curso JavaScript</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="galeria imagen">
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="container is-relative">
+        <nav class="level">
+            <div class="level-left">
+                <div class="level-item">
+                    <a class="button is-info" href="galeria.html">
+                        <span class="icon">
+                            <i class="fas fa-arrow-left"></i>
+                        </span>
+                        <span>Volver a Galería</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <div class="field has-text-centered">
+            <figure class="image image-frame is-relative">
+                <div class="loading">
+                    <span class="icon is-large has-text-white is-size-2">
+                        <i class="fas fa-circle-notch fa-spin fa-3x"></i>
+                    </span>
+                </div>
+                <img />
+                <button id="btnLikeImage">
+                    <span class="icon is-large has-text-danger is-not-liked">
+                        <i class="far fa-heart fa-3x"></i>
+                    </span>
+                    <span class="icon is-large has-text-danger is-liked">
+                        <i class="fa fa-heart fa-3x"></i>
+                    </span>
+                </button>
+            </figure>
+        </div>
+        <div class="field">
+            <nav class="level">
+                <div class="level-left">
+                    <div class="level-item">
+                        <div class="tags has-addons">
+                            <div class="tag is-medium is-danger">
+                                <span class="icon">
+                                    <i class="fas fa-heart"></i>
+                                </span>
+                            </div>
+                            <div class="tag is-medium is-dark" id="tagNumLikes"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="level-item">
+                    <span class="tag is-medium is-link" id="tagDescripcion"></span>
+                </div>
+                <div class="level-right">
+                    <div class="level-item">
+                        <div class="tags has-addons">
+                            <div class="tag is-medium is-info">
+                                <span class="icon">
+                                    <i class="fas fa-comment"></i>
+                                </span>
+                            </div>
+                            <div class="tag is-medium is-dark" id="tagNumComentarios"></div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="field" id="marcoComentarios" style="margin-top: 2rem;">
+            <article class="media is-hidden" id="plantillaComentario">
+                <figure class="media-left">
+                    <a class="is-size-5 autorUsuario">
+                        XXX
+                    </a>
+                </figure>
+                <div class="media-content">
+                    <div class="content">
+                        <p class="has-text-white contenido">
+                            dsad asd asdasd sads
+                            dsadasd asdas ;lksal; sakl;
+                        </p>
+                        <small class="has-text-grey-light"><span class="tiempo">3 hrs</span> - <span class="autorNombre is-uppercase">XXX</span></small>
+                    </div>
+                </div>
+                <figure class="media-right">
+                    <button class="button is-danger">
+                        <span class="icon">
+                            <i class="fas fa-trash"></i>
+                        </span>
+                    </button>
+                </figure>
+            </article>
+            <article class="media" id="nuevoComentario">
+                <figure class="media-left">
+                    <p class="is-size-5 autorUsuario">
+                        XXX
+                    </p>
+                </figure>
+                <div class="media-content">
+                    <div class="field">
+                        <p class="control">
+                            <textarea class="textarea" placeholder="Escribe tu comentario..."></textarea>
+                        </p>
+                    </div>
+                    <div class="field">
+                        <nav class="level">
+                            <div class="level-left">
+                                <p class="help is-danger is-hidden">Comentario no válido. Debe contener entre 3 y 1000
+                                    carácteres.</p>
+                                <p class="help is-success is-hidden">El comentario es válido.</p>
+                                <p class="help is-danger is-hidden" name="msgError">XXX</p>
+                            </div>
+                            <div class="level-right">
+                                <div class="level-item">
+                                    <button class="button is-info">
+                                        <span class="icon">
+                                            <i class="fas fa-comment"></i>
+                                        </span>
+                                        <span>
+                                            Crear Comentario
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <script defer async src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script defer async src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer async src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script defer async src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/es.js"></script>
+    <script src="utils.js" async defer></script>
+    <script src="imagen.js" async defer></script>
+</body>
+
+</html>

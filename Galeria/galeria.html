@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Galería - Curso JavaScript</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="galeria">
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <div class="container is-relative">
+        <nav class="level">
+            <div class="level-item"></div>
+            <div class="level-right">
+                <div class="level-item">
+                    <div class="file is-medium is-info">
+                        <label class="file-label">
+                            <input class="file-input" type="file" name="resume" accept="image/jpeg">
+                            <span class="file-cta">
+                                <span class="file-icon">
+                                    <i class="fas fa-upload"></i>
+                                </span>
+                                <span class="file-label">
+                                    Subir Foto
+                                </span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="level-item">
+                    <button class="button is-medium is-danger is-uppercase" id="btnSignOut">
+                        <span class="icon">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </span>
+                        <span>Salir</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div class="loading">
+            <span class="icon is-large has-text-white is-size-2">
+                <i class="fas fa-circle-notch fa-spin fa-3x"></i>
+            </span>
+        </div>
+        <div class="message is-info is-hidden" id="msgNoImagenes">
+            <div class="message-body has-text-centered is-size-4">No hay imágenes en la Galería</div>
+        </div>
+        <div class="message is-danger is-hidden" id="msgErrorImagenes">
+            <div class="message-body has-text-centered is-size-4">Se produjo un error recuperando las imágenes.
+                Inténtalo más tarde.</div>
+        </div>
+        <div class="columns is-multiline is-centered is-mobile" id="galeria">
+        </div>
+
+        <div class="modal" id="modalNuevaImagen">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Nueva Imagen</p>
+                    <button class="delete cerrar-modal" aria-label="close"></button>
+                </header>
+                <section class="modal-card-body">
+                    <div class="field has-text-centered">
+                        <figure class="image">
+                            <img alt="Cargando Imagen..." src="" />
+                        </figure>
+                    </div>
+                    <div class="field">
+                        <label class="label">Descripción</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input" type="text" placeholder="Descripción de la Foto">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-pencil-alt"></i>
+                            </span>
+                            <span class="icon is-small is-right">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </span>
+                        </div>
+                        <p class="help is-danger is-hidden">Descripción no es válida. Debe contener entre 6 y 1000
+                            carácteres.</p>
+                        <p class="help is-success is-hidden">La descripción es válida</p>
+                    </div>
+                </section>
+                <footer class="modal-card-foot">
+                    <nav class="level" style="width: 100%">
+                        <div class="level-left">
+                            <div class="level-item">
+                                <button class="button cerrar-modal">Cancelar</button>
+                            </div>
+                        </div>
+                        <div class="level-right">
+                            <div class="level-item">
+                                <button class="button is-success">
+                                    <span class="icon"><i class="fas fa-upload"></i></span>
+                                    <span>Crear Imagen</span>
+                                </button>
+                            </div>
+                        </div>
+                    </nav>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script defer async src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script defer async src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="utils.js" async defer></script>
+    <script src="galeria.js" async defer></script>
+</body>
+
+</html>

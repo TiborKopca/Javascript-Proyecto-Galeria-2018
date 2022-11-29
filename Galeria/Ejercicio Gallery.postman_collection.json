@@ -1,0 +1,284 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Ejercicio Gallery",
+		"_postman_id": "e4b2060e-f066-d39b-a34e-53927be03f1f",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Check username available",
+			"request": {
+				"url": "https://tasklist.kydemy.com:9192/api/gallery/users/fgrau/available/",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "Register User",
+			"request": {
+				"url": "https://tasklist.kydemy.com:9192/api/gallery/users/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"slee\",\n\t\"password\": \"JIHXyG+1Nli0cf4ULydvQpwgvr93SJmUf8Rlvqm5m+M=\",\n\t\"fullname\": \"Stan Lee\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Response time is less than 200ms\"] = responseTime < 200;",
+							"",
+							"postman.setGlobalVariable(\"TOKEN\", jsonData.token);",
+							"postman.setGlobalVariable(\"ID\", jsonData.id);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://tasklist.kydemy.com:9192/api/gallery/users/login/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"K1e1WbVIYqrixTyQDSVIKOJci8637Jm84/zQe1BmLy4=\",\n\t\"password\": \"JIHXyG+1Nli0cf4ULydvQpwgvr93SJmUf8Rlvqm5m+M=\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"request": {
+				"url": {
+					"raw": "https://tasklist.kydemy.com:9192/api/gallery/users/fgrau/?token={{TOKEN}}&account_id={{ID}}",
+					"protocol": "https",
+					"host": [
+						"tasklist",
+						"kydemy",
+						"com"
+					],
+					"port": "9192",
+					"path": [
+						"api",
+						"gallery",
+						"users",
+						"fgrau",
+						""
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "account_id",
+							"value": "{{ID}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Imágenes Galeria",
+			"request": {
+				"url": {
+					"raw": "https://tasklist.kydemy.com:9192/api/gallery/images/?token={{TOKEN}}&account_id={{ID}}",
+					"protocol": "https",
+					"host": [
+						"tasklist",
+						"kydemy",
+						"com"
+					],
+					"port": "9192",
+					"path": [
+						"api",
+						"gallery",
+						"images",
+						""
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "account_id",
+							"value": "{{ID}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Post Imagen",
+			"request": {
+				"url": {
+					"raw": "https://tasklist.kydemy.com:9192/api/gallery/images/?token={{TOKEN}}&account_id={{ID}}&description=Descripción de la imagen",
+					"protocol": "https",
+					"host": [
+						"tasklist",
+						"kydemy",
+						"com"
+					],
+					"port": "9192",
+					"path": [
+						"api",
+						"gallery",
+						"images",
+						""
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "account_id",
+							"value": "{{ID}}",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "description",
+							"value": "Descripción de la imagen",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": ""
+					}
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Datos Imagen",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Response time is less than 200ms\"] = responseTime < 200;",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"",
+							"postman.setGlobalVariable(\"IMG_URL\", jsonData.highres_url);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": {
+					"raw": "https://tasklist.kydemy.com:9192/api/gallery/images/2/?token={{TOKEN}}&account_id={{ID}}",
+					"protocol": "https",
+					"host": [
+						"tasklist",
+						"kydemy",
+						"com"
+					],
+					"port": "9192",
+					"path": [
+						"api",
+						"gallery",
+						"images",
+						"2",
+						""
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "account_id",
+							"value": "{{ID}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Imagen HighRES",
+			"request": {
+				"url": "{{IMG_URL}}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
